@@ -2,7 +2,7 @@
 
 Personal website for **Edwardthepilot** — a Swedish commercial Airbus A220 pilot and Twitch flight sim streamer. Built with plain HTML, CSS, and JavaScript. No frameworks, no dependencies. Hosted on GitHub Pages.
 
-🌐 **Live site:** [dmiorange.github.io/edwardthepilot](https://dmiorange.github.io/edwardthepilot)
+🌐 **Live site:** [dmiorange.github.io/edwardthepilot](https://edwardthepilot.com/index.html)
 
 ---
 
