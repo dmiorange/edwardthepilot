@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Edwardthepilot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .gallery-slot {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      border: 2px dashed var(--border);
+      background: var(--orange-pale);
+      overflow: hidden;
+    }
+    .gallery-slot img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-slot-empty {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .gallery-slot-empty span:first-child { font-size: 1.5rem; }
+    .gallery-slot-empty span:last-child {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .blog-embed-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 8px 32px rgba(200,120,0,0.08);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange-deep);
+      margin-bottom: 10px;
+    }
+    .section-tag::before {
+      content: '';
+      width: 18px; height: 2px;
+      background: linear-gradient(30deg, #F6C26B, #D88A36);
+      border-radius: 2px;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .scenery-hero {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background-size: cover;
+      background-position: center 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .scenery-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,8,6,0.35) 0%, rgba(10,8,6,0.55) 60%, rgba(10,8,6,0.75) 100%);
+    }
+    .scenery-hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 80%, rgba(245,166,35,0.18) 0%, transparent 65%);
+    }
+    .scenery-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .scenery-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange-light);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.5s 0.1s forwards;
+    }
+    .scenery-hero-content h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.25s forwards;
+    }
+    .scenery-hero-content h1 span { color: var(--orange-light); }
+    .scenery-hero-content p {
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      max-width: 460px;
+      margin: 0 auto;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.4s forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/b415b92c-1c21-4a3e-a112-42fbdaabbc81-profile_image-70x70.png" alt="" /><span>Edwardthepilot</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="msfs.html">MSFS</a></li>
+        <li><a href="scenery.html">Scenery</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="scenery-hero" style="background-image: url('images/Microsoft_Flight_Simulator_2024_20_08_2025_22_54_43.png'); background-position: center top;">
+      <div class="scenery-hero-overlay"></div>
+      <div class="scenery-hero-glow"></div>
+      <div class="scenery-hero-content">
+        <p class="scenery-eyebrow">The Pilot Behind the Stream</p>
+        <h1>About <span>Me</span></h1>
+        <p>Commercial pilot, flight sim enthusiast, Twitch streamer.</p>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="section">
+      <div class="about-grid">
+
+        <div class="fade-up">
+          <div class="about-avatar" style="padding:0; background:none; border:none;">
+            <img src="images/panel-46761626-image-cba84b4b-1b52-419e-b33e-0b67ff68ea73.png"
+                 alt="Edwardthepilot"
+                 style="width:100%; height:100%; object-fit:cover; border-radius:6px;" />
+          </div>
+        </div>
+
+        <div class="about-text fade-up">
+          <h2>Hi there, I'm Edward!</h2>
+          <p>
+            I am 31 years old, born and raised in Sweden. I always dreamed of becoming a pilot since I was 6 years old. I started pursuing my dream in 2013 and have since 2016 worked as a commercial pilot.
+          </p>
+          <p>
+            After working mainly nighttime flying cargo all across Europe for five years on a turboprop and the Bombardier CRJ, I started flying the world's most modern single-aisle airliner, the Airbus A220, in 2022.
+          </p>
+          <p>
+            I got my first flight sim at the age of six and have continuously used various simulators ever since. Flight sims are a great way to get as close as possible to real aviation without leaving your home. And if you decide to start flying in real life, they're a fantastic tool to practice flows, checklists, and radio phraseology right at your PC.
+          </p>
+
+          <div class="about-tags">
+            <span class="tag">Commercial Pilot - Airbus A220</span>
+            <span class="tag">Flight Sim</span>
+            <span class="tag">VATSIM</span>
+            <span class="tag">Sweden</span>
+            <span class="tag">Twitch Streamer</span>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="https://www.twitch.tv/edwardthepilot" target="_blank" class="btn btn-orange">
+              Follow on Twitch
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- IRL FLIGHT BLOG -->
+      <div class="fade-up">
+        <div class="section-tag">Discord Channel</div>
+        <h2 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:var(--ink); margin-bottom:8px;">
+          IRL Flight Blog
+        </h2>
+        <p style="font-size:0.9rem; color:var(--ink-soft); margin-bottom:28px; line-height:1.6; max-width:560px;">
+          Follow along with real-life flights, photos from the cockpit, and aviation content straight from the Discord.
+        </p>
+
+        <!-- PHOTO GALLERY -->
+        <div class="section-tag" style="margin-bottom:14px;">Photos</div>
+        <div class="gallery-grid" style="margin-bottom:28px;">
+
+          <!-- SLOT 1 — replace gallery-slot-empty with: <img src="images/your-photo.jpg" alt="..." /> -->
+          <div class="gallery-slot">
+            <img src="images/blog1.jpg" alt="Gallery photo">
+          </div>
+
+          <!-- SLOT 2 -->
+          <div class="gallery-slot">
+            <img src="images/blog2.jpg" alt="Gallery photo">
+          </div>
+
+          <!-- SLOT 3 -->
+          <div class="gallery-slot">
+            <img src="images/blog3.jpg" alt="Gallery photo">
+          </div>
+
+          <!-- SLOT 4 -->
+          <div class="gallery-slot">
+            <img src="images/blog4.jpg" alt="Gallery photo">
+          </div>
+
+          <!-- SLOT 5 -->
+          <div class="gallery-slot">
+            <img src="images/blog5.jpg" alt="Gallery photo">
+          </div>
+
+          <!-- SLOT 6 -->
+          <div class="gallery-slot">
+            <img src="images/blog6.jpg" alt="Gallery photo">
+          </div>
+
+        </div>
+
+        <!-- Discord embed -->
+        <div class="section-tag" style="margin-bottom:14px;">Live Channel</div>
+        <div class="blog-embed-wrap">
+          <widgetbot
+            server="YOUR_SERVER_ID"
+            channel="YOUR_CHANNEL_ID"
+            width="100%"
+            height="500">
+          </widgetbot>
+        </div>
+
+        <p style="margin-top:12px; font-size:0.78rem; color:var(--ink-muted);">
+          Prefer to open in Discord?
+          <a href="https://discord.gg/6BbDR5AXqM" target="_blank" style="color:var(--orange-dark); font-weight:600; text-decoration:none;">
+            Join the server ↗
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Edwardthepilot · Created by Hamsta</span>
+    <span class="footer-copy">© 2026 · Flight Simulation Streamer</span>
+  </footer>
+
+  <script src="https://cdn.widgetbot.io/widget/6.js" async></script>
+  <script src="main.js"></script>
+</body>
+</html>
